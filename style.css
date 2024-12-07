@@ -1,8 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: rgb(168, 197, 201); /* Background color from the image */
-
+    background-color: rgb(168, 197, 201); /* Background color */
     margin: 0;
     padding: 0;
 }
@@ -14,13 +13,17 @@ header {
 }
 
 .logo {
-    max-width: 200px;
+    max-width: 170px; /* מתאים למידות קטנות יותר */
     height: auto;
+    margin: 0 auto;
+    display: block;
 }
+
 
 h1 {
     color: #333;
     margin: 20px 0;
+    font-size: 1.8rem;
 }
 
 form {
@@ -28,7 +31,8 @@ form {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 90%;
+    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -57,4 +61,26 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 15px;
+    }
+}
+
+/* Media Query for very small screens (e.g., phones) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    form {
+        padding: 10px;
+    }
 }
