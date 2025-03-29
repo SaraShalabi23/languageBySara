@@ -1,29 +1,38 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>שירותי תרגום</title>
+    
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
     <header>
-        <img src="images/logo.webp" alt="לוגו האתר" class="logo">
+        <img src="images/tlogo2.png" alt="לוגו האתר" class="logo">
     </header>
-    <h1>שירותי תרגום לשפה הטורקית והאיטלקית</h1>
+    <h1>לקבלת הצעת מחיר הכי משתלמת ואיכותית למסמכים שלכם - מוזמנים למלות את הפרטים!</h1>
+    <h1>נחזור אליכם בתשובה עם הצעת מחיר</h1>
+
     <form id="translationForm">
         <label for="name">שם מלא:</label>
         <input type="text" id="name" name="name" required><br><br>
 
         <label for="email">אימייל:</label>
         <input type="email" id="email" name="email" required><br><br>
+        <label for="phone">מספר טלפון:</label>
+        <input type="phone" id="phone" name="phone" required><br><br>
 
         <label for="sourceLanguage">שפת מקור:</label>
         <select id="sourceLanguage" name="sourceLanguage" required>
             <option value="hebrew">עברית</option>
             <option value="arabic">ערבית</option>
             <option value="english">אנגלית</option>
+            <option value="italian">איטלקית</option>
+            <option value="turkish">טורקית</option>
+
+
         </select><br><br>
 
         <label for="targetLanguage">שפת יעד:</label>
@@ -31,6 +40,10 @@
             <option value="turkish">טורקית</option>
             <option value="italian">איטלקית</option>
             <option value="english">אנגלית</option>
+            <option value="hebrew">עברית</option>
+            <option value="hebrew">עברית</option>
+
+
         </select><br><br>
         <label for="file">העלה קובץ לתרגום:</label>
         <input type="file" id="file" name="file" required><br><br>
@@ -38,5 +51,15 @@
     </form>
 
     <script src="script.js"></script>
+    <!-- Popup Notification -->
+<div id="popupOverlay" class="popup-overlay">
+    <div class="popup-content">
+        <img src="images/tlogo2.png" alt="לוגו האתר" class="logo">
+
+      <p>קיבלנו בהצלחה את הפרטים שלך,<br>נחזור אליך בהודעת וואטסאפ עם הצעת מחיר.</p>
+      <button onclick="closePopup()">אישור</button>
+    </div>
+  </div>
+  
 </body>
 </html>
