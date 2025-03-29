@@ -20,7 +20,6 @@ document.getElementById('translationForm').addEventListener('submit', function (
         console.log('File uploaded:', fileInput.name);
     }
 
-    alert('הפרטים נשלחו בהצלחה! נשלח מייל בהמשך.');
 });
 
 //for animation : 
