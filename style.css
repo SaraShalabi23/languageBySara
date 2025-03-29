@@ -22,11 +22,20 @@ header {
     display: block;
 }
 
-
-h1 {
-    color: #333;
+h2 {
+    color: #000000;
     margin: 10px 0;
     font-size: large;
+}
+h1 {
+    color: #000000;
+    margin: 4px 0;
+    font-size: large;
+    font-family:monospace;
+    font-weight: bold;
+    font-size:xx-large;
+    text-align: center;
+
 }
 
 form {
