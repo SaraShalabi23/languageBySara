@@ -27,11 +27,11 @@
 
         <label for="sourceLanguage">שפת מקור:</label>
         <select id="sourceLanguage" name="sourceLanguage" required>
-            <option value="hebrew">עברית</option>
-            <option value="arabic">ערבית</option>
-            <option value="english">אנגלית</option>
-            <option value="italian">איטלקית</option>
             <option value="turkish">טורקית</option>
+            <option value="italian">איטלקית</option>
+            <option value="english">אנגלית</option>
+            <option value="arabic">ערבית</option>
+            <option value="hebrew">עברית</option>
 
 
         </select><br><br>
@@ -41,13 +41,20 @@
             <option value="turkish">טורקית</option>
             <option value="italian">איטלקית</option>
             <option value="english">אנגלית</option>
-            <option value="hebrew">עברית</option>
+            <option value="arabic">ערבית</option>
             <option value="hebrew">עברית</option>
 
 
         </select><br><br>
         <label for="file">העלה קובץ לתרגום:</label>
-        <input type="file" id="file" name="file" required><br><br>
+        <input
+  type="hidden"
+  role="uploadcare-uploader"
+  name="file"
+  data-public-key="4548e696956f9d312f52"
+  data-multiple="false"
+/>
+
         <button type="submit">שלח</button>
     </form>
 
@@ -61,6 +68,13 @@
       <button onclick="closePopup()">אישור</button>
     </div>
   </div>
-  
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("ckB6YQ1s7-2qCNXc4"); // זה ה־User ID שלך (public key)
+  })();
+</script>
+<script src="https://ucarecdn.com/libs/widget/3.x/uploadcare.full.min.js"></script>
+
 </body>
 </html>

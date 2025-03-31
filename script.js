@@ -33,7 +33,7 @@ submitButton.addEventListener('click', function () {
 });
 
 //for the popup : 
-document.getElementById('translationForm').addEventListener('submit', function (e) {
+/*document.getElementById('translationForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const name = document.getElementById('name').value.trim();
@@ -50,7 +50,40 @@ document.getElementById('translationForm').addEventListener('submit', function (
     // פתח את הפופאפ
     document.getElementById('popupOverlay').style.display = 'flex';
 });
+*/
 
+  
+  document.getElementById("translationForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+  
+    const form = document.getElementById("translationForm");
+  
+    // נוודא שהקובץ הועלה והקישור נוצר
+    const fileWidget = uploadcare.Widget('[role=uploadcare-uploader]');
+    const fileInput = form.querySelector('input[name="file"]');
+  
+    fileWidget.value().promise().then(function (fileInfo) {
+      // שמים את הקישור לשדה input בטופס (כך EmailJS יקבל אותו)
+      fileInput.value = fileInfo.cdnUrl;
+  
+      // שולחים את הטופס עם הקישור
+      emailjs.sendForm("service_n022myf", "template_thz9the", form)
+        .then(function () {
+          document.getElementById("popupOverlay").style.display = "flex";
+          form.reset();
+        }, function (error) {
+          alert("שליחת המייל נכשלה: " + error.text);
+        });
+    });
+  });
+  
+  // סגירת הפופ-אפ
+  function closePopup() {
+    document.getElementById("popupOverlay").style.display = "none";
+  }
+  
+ 
+  
 // פונקציית סגירה
 function closePopup() {
     document.getElementById('popupOverlay').style.display = 'none';
